@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Coffee Corner</title>
+
+<link rel="icon" href="caffeine corner.png">
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Toast -->
+
+<div id="toast" class="toast">
+<span id="toastMessage">
+Product added successfully
+</span>
+</div>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<nav>
+
+<div class="logocontainer">
+
+<div class="logobox">
+<img src="caffeine corner.png" alt="Coffee Corner Logo">
+</div>
+
+<h2 class="logo">
+Coffee Corner
+</h2>
+
+</div>
+
+<ul>
+
+<li><a href="#home">Home</a></li>
+<li><a href="#menu">Menu</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#offers">Offers</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+<button type="button" class="cart-icon" onclick="toggleCart()" aria-label="Open shopping cart" aria-controls="cartSidebar">
+
+🛒
+<span id="cart-count">0</span>
+
+</button>
+
+</nav>
+
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+<div class="hero-content" data-aos="fade-up">
+
+<h1>
+
+Fresh Coffee Every Day
+
+</h1>
+
+<p>
+
+Enjoy premium coffee made from carefully selected beans,
+crafted with passion to deliver the perfect coffee experience.
+
+</p>
+
+<a href="#menu" class="btn">
+
+Order Now
+
+</a>
+
+</div>
+
+</section>
+
+<!-- ================= MENU ================= -->
+
+<section class="menu" id="menu">
+
+<h2 data-aos="fade-up">
+
+Popular Drinks
+
+</h2>
+
+<div class="products">
+
+<div class="card" data-aos="zoom-in">
+
+<img src="expresso.png" alt="Espresso">
+
+<h3>Espresso</h3>
+
+<p>$3.50</p>
+
+<button onclick="addToCart('Espresso',3.5)">
+
+Add To Cart
+
+</button>
+
+</div>
+
+<div class="card" data-aos="zoom-in" data-aos-delay="100">
+
+<img src="Latte.png" alt="Latte">
+
+<h3>Latte</h3>
+
+<p>$4.00</p>
+
+<button onclick="addToCart('Latte',4)">
+
+Add To Cart
+
+</button>
+
+</div>
+
+<div class="card" data-aos="zoom-in" data-aos-delay="200">
+
+<img src="Cappuccino.png" alt="Cappuccino">
+
+<h3>Cappuccino</h3>
+
+<p>$4.50</p>
+
+<button onclick="addToCart('Cappuccino',4.5)">
+
+Add To Cart
+
+</button>
+
+</div>
+
+<div class="card" data-aos="zoom-in" data-aos-delay="300">
+
+<img src="Mocha.png" alt="Mocha">
+
+<h3>Mocha</h3>
+
+<p>$5.00</p>
+
+<button onclick="addToCart('Mocha',5)">
+
+Add To Cart
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+<!-- ================= ABOUT ================= -->
+
+<section class="about" id="about">
+
+<div class="about-image" data-aos="fade-right">
+
+<img src="تنزيل (1).png" alt="About Coffee Corner">
+
+</div>
+
+<div class="about-text" data-aos="fade-left">
+
+<h2>About Us</h2>
+
+<p>
+
+Coffee Corner is more than just a coffee shop.
+We carefully select premium coffee beans to prepare drinks
+with rich flavor and unforgettable aroma.
+
+Our goal is to create a warm place where every customer
+can relax, enjoy quality coffee, and have a great experience.
+
+</p>
+
+<a href="#menu" class="btn">
+
+Explore Menu
+
+</a>
+
+</div>
+
+</section>
+
+<!-- ================= SPECIAL OFFERS ================= -->
+
+<section class="offers" id="offers">
+
+<h2 data-aos="fade-up">
+
+Special Offers
+
+</h2>
+
+<div class="products">
+
+<div class="card" data-aos="zoom-in">
+
+<img src="Latte.png" alt="Latte">
+
+<h3>Latte</h3>
+
+<p>
+
+<del>$5.00</del>
+
+<strong>$4.00</strong>
+
+</p>
+
+<button onclick="addToCart('Latte',4)">
+Order Now
+</button>
+
+</div>
+
+<div class="card" data-aos="zoom-in" data-aos-delay="100">
+
+<img src="Cappuccino.png" alt="Cappuccino">
+
+<h3>Cappuccino</h3>
+
+<p>
+
+<del>$5.50</del>
+
+<strong>$4.50</strong>
+
+</p>
+
+<button onclick="addToCart('Cappuccino',4.5)">
+Order Now
+</button>
+
+</div>
+
+<div class="card" data-aos="zoom-in" data-aos-delay="200">
+
+<img src="Mocha.png" alt="Mocha">
+
+<h3>Mocha</h3>
+
+<p>
+
+<del>$6.00</del>
+
+<strong>$5.00</strong>
+
+</p>
+
+<button onclick="addToCart('Mocha',5)">
+Order Now
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= GALLERY ================= -->
+
+<section class="gallery" id="gallery">
+
+<h2 data-aos="fade-up">
+
+Coffee Gallery
+
+</h2>
+
+<div class="gallery-grid">
+
+<img src="Cappuccino.png" alt="Coffee" data-aos="zoom-in">
+
+<img src="expresso.png" alt="Coffee" data-aos="zoom-in" data-aos-delay="100">
+
+<img src="Mocha.png" alt="Mocha coffee" data-aos="zoom-in" data-aos-delay="200">
+
+<img src="Latte.png" alt="Coffee" data-aos="zoom-in" data-aos-delay="300">
+
+</div>
+
+</section>
+
+<!-- ================= STATISTICS ================= -->
+
+<section class="stats">
+
+<div class="stat" data-aos="fade-up">
+<h2>5000+</h2>
+<p>Happy Customers</p>
+</div>
+
+<div class="stat" data-aos="fade-up" data-aos-delay="100">
+<h2>25+</h2>
+<p>Coffee Types</p>
+</div>
+
+<div class="stat" data-aos="fade-up" data-aos-delay="200">
+<h2>10+</h2>
+<p>Years Experience</p>
+</div>
+
+<div class="stat" data-aos="fade-up" data-aos-delay="300">
+<h2>4.9★</h2>
+<p>Customer Rating</p>
+</div>
+
+</section>
+<!-- ================= CART ================= -->
+
+<div class="cart-sidebar" id="cartSidebar" aria-hidden="true">
+
+<div class="cart-header">
+
+<h2>Your Cart</h2>
+
+<button onclick="toggleCart()">✖</button>
+
+</div>
+
+<div id="cartItems">
+
+<p>Your cart is empty.</p>
+
+</div>
+
+<div class="cart-footer">
+
+<h3 id="totalPrice">
+
+Total : $0.00
+
+</h3>
+
+<button
+type="button"
+class="clear-btn"
+onclick="clearCart()">
+
+🗑 Clear Cart
+
+</button>
+
+<form
+action="https://formsubmit.co/abdelr0h0n@gmail.com"
+method="POST"
+onsubmit="prepareOrder()">
+
+<input
+type="hidden"
+name="_captcha"
+value="false">
+
+<input
+type="hidden"
+name="_subject"
+value="New Coffee Order">
+
+<input
+type="hidden"
+name="Order"
+id="orderData">
+
+<input
+type="text"
+name="Customer Name"
+placeholder="Your Name"
+required>
+
+<input
+type="tel"
+name="Phone"
+placeholder="Phone Number"
+required>
+
+<textarea
+name="Notes"
+placeholder="Notes"></textarea>
+
+<button type="submit">
+
+Confirm Order
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+<!-- ================= TESTIMONIALS ================= -->
+
+<section class="testimonials">
+
+<h2 data-aos="fade-up">
+
+What Our Customers Say
+
+</h2>
+
+<div class="products">
+
+<div class="card" data-aos="fade-up">
+
+<h3>⭐⭐⭐⭐⭐</h3>
+
+<p>
+
+"The best coffee I've ever tasted.
+Highly recommended!"
+
+</p>
+
+<strong>Ahmed</strong>
+
+</div>
+
+<div class="card" data-aos="fade-up" data-aos-delay="150">
+
+<h3>⭐⭐⭐⭐⭐</h3>
+
+<p>
+
+"Very comfortable place and amazing coffee."
+
+</p>
+
+<strong>Sarah</strong>
+
+</div>
+
+<div class="card" data-aos="fade-up" data-aos-delay="300">
+
+<h3>⭐⭐⭐⭐⭐</h3>
+
+<p>
+
+"Fast service and premium quality."
+
+</p>
+
+<strong>Mohamed</strong>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact" id="contact">
+
+<h2>
+
+Contact Us
+
+</h2>
+
+<div class="contact-box">
+
+<div>
+
+<h3>📞 Phone</h3>
+
+<p>+20 1024152390</p>
+
+</div>
+
+<div>
+
+<h3>📧 Email</h3>
+
+<p>abdelr0h0n@gmail.com</p>
+
+</div>
+
+<div>
+
+<h3>📍 Address</h3>
+
+<p>Qena, Egypt</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= WHATSAPP ================= -->
+
+<a
+href="https://wa.me/201024152390"
+class="whatsapp"
+target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
+
+<i class="fab fa-whatsapp"></i>
+
+</a>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="footer-content">
+
+<h2>Coffee Corner</h2>
+
+<p>
+
+Fresh Coffee • Premium Quality • Every Day
+
+</p>
+
+<p>
+
+© 2026 Coffee Corner. All Rights Reserved.
+
+</p>
+
+</div>
+
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
